@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  /* Removed flex from body so the page can scroll naturally */
+}
+
+/* CONTAINER REUSED FROM YOUR CODE */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* Added to center containers on scrollable pages */
+}
+
+/* TYPOGRAPHY & COLORS REUSED */
+.brand {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+.brand span {
+  color: #00ffcc;
+}
+
+.heading {
+  font-size: 150px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.heading span {
+  color: #00ffcc;
+}
+
+.subtext {
+  font-size: 24px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #000;
+  z-index: 100;
+  border-bottom: 1px solid #888; /* Using your grey */
+}
+
+.nav-links a {
+  margin-left: 30px;
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #00ffcc;
+}
+
+/* HERO SECTION (Takes up full screen) */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* YOUR BLOB REUSED AS HERO BACKGROUND */
+.blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #00ffcc, #66ff00);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* INFO SECTION */
+.info-section {
+  padding: 100px 0;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.info-card {
+  flex: 1;
+  padding: 40px;
+  border: 2px solid #aaa; /* Using your grey */
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  border-color: #00ffcc;
+}
+
+.info-card h3 {
+  font-size: 24px;
+  color: #00ffcc;
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid #aaa; /* Using your grey */
+  padding: 30px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* REUSING YOUR SOCIAL CSS */
+.social {
+  color: #888;
+}
+
+.social a {
+  margin-left: 15px;
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .heading {
+    font-size: 48px;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .info-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   SUB-PAGE LAYOUTS (About, Contact, etc.)
+   ========================================= */
+
+/* Creates space below the fixed navbar for the title */
+.page-header {
+  padding-top: 150px; 
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+/* Constrains the reading width so the text isn't too wide */
+.about-section {
+  padding: 50px 0 100px 0;
+}
+
+.about-container {
+  max-width: 800px; /* Narrower than the 1200px main container for better reading */
+  margin: 0 auto;
+}
+
+.about-section p {
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+/* Makes the first paragraph stand out */
+.lead-text {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.about-section strong {
+  color: #00ffcc;
+  font-weight: 500;
+}
+
+/* =========================================
+   BLOGS PAGE SPECIFIC
+   ========================================= */
+
+/* Search & Sort Bar */
+.controls-section {
+  padding: 20px 0;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.search-bar, .filter-dropdown {
+  background: #000;
+  border: 1px solid #aaa; /* Using your grey */
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-bar {
+  flex: 1; /* Makes the search bar take up the remaining space */
+}
+
+.filter-dropdown {
+  width: 250px;
+  cursor: pointer;
+  appearance: none; /* Removes default browser styling on dropdowns */
+}
+
+/* Hover & Focus effects for inputs */
+.search-bar:focus, .filter-dropdown:focus, .filter-dropdown:hover {
+  border-color: #00ffcc;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+}
+
+/* Blog Cards */
+.blog-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  margin-top: auto; /* Pushes the read more link to the bottom */
+  padding-top: 20px;
+  color: #aaa;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.blog-card:hover .read-more {
+  color: #00ffcc;
+}
+
+/* Responsive adjustments for the search bar */
+@media(max-width: 900px) {
+  .controls-container {
+    flex-direction: column;
+  }
+  .filter-dropdown {
+    width: 100%;
+  }
+}
